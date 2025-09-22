@@ -41,7 +41,7 @@ const Header = () => {
                 alt="Trong Triet - Data Analyst"
                 width={128}
                 height={128}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain bg-white"
                 priority
                 onError={(e) => {
                   // Fallback to gradient background if image fails to load
@@ -63,7 +63,7 @@ const Header = () => {
 
         {/* Greeting */}
         <h1 className="text-6xl font-bold text-center bg-gradient-to-r from-gray-900 via-blue-600 to-blue-800 bg-clip-text text-transparent mb-8 leading-tight animate-fade-in">
-          Hey ! I'm Trong Triet
+          Hey ! I&apos;m Trong Triet
         </h1>
 
         {/* Social Buttons */}

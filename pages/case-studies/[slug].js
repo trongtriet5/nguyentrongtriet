@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import Layout from '../../components/Layout';
 import { caseStudies } from '../../data/caseStudies';
 
@@ -59,15 +60,16 @@ const CaseStudyDetail = () => {
 
         {/* Main Image */}
         <div className="mb-8">
-          <img 
-            src={caseStudy.image} 
-            alt={caseStudy.title}
-            className="w-full h-96 object-cover rounded-lg shadow-lg"
-            loading="lazy"
-            onError={(e) => {
-              e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00MDAgMjAwQzQwMCAyNjIuMDkyIDM0Ny4wOTIgMzE1IDI4NSAzMTVDMjE3LjA5MiAzMTUgMTYwIDI1Ny45MDggMTYwIDE5MEMxNjAgMTIyLjA5MiAyMTcuMDkyIDY1IDI4NSA2NUMzNDcuMDkyIDY1IDQwMCAxMTcuOTA4IDQwMCAyMDBaIiBmaWxsPSIjOUNBM0FGIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMjIwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjgiIGZpbGw9IiM2QjcyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkltYWdlIFBsYWNlaG9sZGVyPC90ZXh0Pgo8L3N2Zz4=';
-            }}
-          />
+          <div className="w-full h-96 relative">
+            <Image
+              src={caseStudy.image}
+              alt={caseStudy.title}
+              fill
+              sizes="100vw"
+              className="object-cover rounded-lg shadow-lg"
+              priority={false}
+            />
+          </div>
         </div>
 
         {/* Power BI Dashboard PDF */}

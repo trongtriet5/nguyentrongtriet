@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const CaseCard = ({ caseStudy }) => {
   return (
@@ -11,15 +12,16 @@ const CaseCard = ({ caseStudy }) => {
         {/* Content */}
         <div className="relative z-10">
           <div className="mb-6 relative overflow-hidden rounded-xl">
-            <img 
-              src={caseStudy.image} 
-              alt={caseStudy.title}
-              className="w-full h-40 object-cover rounded-xl group-hover:scale-110 transition-transform duration-500"
-              loading="lazy"
-              onError={(e) => {
-                e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDQwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yMDAgMTAwQzIwMCAxMzEuMDQ2IDE3NS4wNDYgMTU2IDE0NCAxNTZDMTA4LjU0NiAxNTYgODggMTM1LjQ1NCA4OCAxMDBDODggNjQuNTQ2IDEwOC41NDYgNDQgMTQ0IDQ0QzE3NS4wNDYgNDQgMjAwIDY4Ljk1NCAyMDAgMTAwWiIgZmlsbD0iIzlDQTNBRiIvPgo8dGV4dCB4PSIyMDAiIHk9IjExMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNkI3MjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5JbWFnZSBQbGFjZWhvbGRlcjwvdGV4dD4KPC9zdmc+';
-              }}
-            />
+            <div className="w-full h-40 relative">
+              <Image
+                src={caseStudy.image}
+                alt={caseStudy.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                className="object-contain rounded-xl group-hover:scale-110 transition-transform duration-500"
+                priority={false}
+              />
+            </div>
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
           </div>

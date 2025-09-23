@@ -62,9 +62,59 @@ const Header = () => {
         </div>
 
         {/* Greeting */}
-        <h1 className="text-6xl font-bold text-center bg-gradient-to-r from-gray-900 via-blue-600 to-blue-800 bg-clip-text text-transparent mb-8 leading-tight animate-fade-in">
+        <h1 className="text-6xl font-bold text-center bg-gradient-to-r from-gray-900 via-blue-600 to-blue-800 bg-clip-text text-transparent mb-4 leading-tight animate-fade-in">
           Hey ! I&apos;m Trong Triet
         </h1>
+
+        {/* Job Title */}
+        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          Data Analyst | BI Developer
+        </h2>
+
+        {/* Skills */}
+        <div className="mb-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="flex flex-wrap justify-center gap-3">
+            {/* Programming Languages */}
+            <div className="flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full border border-blue-200">
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span className="text-sm font-medium text-blue-800">Python</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full border border-blue-200">
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span className="text-sm font-medium text-blue-800">SQL</span>
+            </div>
+
+            {/* Data Tools */}
+            <div className="flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full border border-green-200">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span className="text-sm font-medium text-green-800">Power BI</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full border border-green-200">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span className="text-sm font-medium text-green-800">Excel</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full border border-green-200">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span className="text-sm font-medium text-green-800">Google Sheets</span>
+            </div>
+
+            {/* Data Analysis Skills */}
+            <div className="flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full border border-purple-200">
+              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+              <span className="text-sm font-medium text-purple-800">Data Visualization</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full border border-purple-200">
+              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+              <span className="text-sm font-medium text-purple-800">Statistical Analysis</span>
+            </div>
+
+            {/* Machine Learning */}
+            <div className="flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full border border-orange-200">
+              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+              <span className="text-sm font-medium text-orange-800">Machine Learning</span>
+            </div>
+          </div>
+        </div>
 
         {/* Social Buttons */}
         <div className="flex flex-wrap justify-center gap-4">

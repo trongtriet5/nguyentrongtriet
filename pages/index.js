@@ -23,7 +23,7 @@ const Home = () => {
               </div>
               <div>
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-blue-600 bg-clip-text text-transparent">
-                  Data Analyst | BI Developer
+                  Summary
                 </h2>
               </div>
             </div>

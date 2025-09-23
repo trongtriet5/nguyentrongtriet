@@ -58,20 +58,6 @@ const CaseStudyDetail = () => {
           </p>
         </div>
 
-        {/* Main Image */}
-        <div className="mb-8">
-          <div className="w-full h-96 relative">
-            <Image
-              src={caseStudy.image}
-              alt={caseStudy.title}
-              fill
-              sizes="100vw"
-              className="object-cover rounded-lg shadow-lg"
-              priority={false}
-            />
-          </div>
-        </div>
-
         {/* Power BI Dashboard PDF */}
         {caseStudy.pdfUrl && (
           <div className="mb-8">
@@ -111,7 +97,6 @@ const CaseStudyDetail = () => {
             {caseStudy.fullDescription}
           </p>
         </div>
-
         {/* Key Achievements */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Key Achievements</h2>

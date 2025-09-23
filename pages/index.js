@@ -129,7 +129,7 @@ const Home = () => {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-blue-500 rounded-lg">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
-                      <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      <path fill="currentColor" d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2zm8 0h2v2h-2v-2z"/>
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-blue-800">Google Business Intelligence</h3>
@@ -157,7 +157,7 @@ const Home = () => {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-green-500 rounded-lg">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
-                      <path fill="currentColor" d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2-7H3v2h16V4zm0 4H3v2h16V8z"/>
+                      <path fill="currentColor" d="M3 13h2v8H3v-8zm4-6h2v14H7V7zm4-4h2v18h-2V3zm4 8h2v10h-2V11zm4-6h2v16h-2V5z"/>
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-green-800">Google Data Analytics</h3>
@@ -185,7 +185,7 @@ const Home = () => {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-purple-500 rounded-lg">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
-                      <path fill="currentColor" d="M8 3C6.9 3 6 3.9 6 5v14c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H8zm0 2h8v12H8V5z"/>
+                      <path fill="currentColor" d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4zM4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4zm0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4z"/>
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-purple-800">SQL Advanced</h3>

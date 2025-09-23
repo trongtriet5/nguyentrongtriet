@@ -106,6 +106,110 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Certifications Section - Full Width */}
+      <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg">
+              <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
+                <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-blue-600 bg-clip-text text-transparent">
+                Certifications
+              </h2>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Google Business Intelligence Certificate */}
+            <div className="animate-slide-in-left" style={{ animationDelay: '0.1s' }}>
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-blue-500 rounded-lg">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
+                      <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-blue-800">Google Business Intelligence</h3>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">
+                  Professional certificate in Business Intelligence and data visualization
+                </p>
+                <a 
+                  href="/GoogleBusinessIntelligenceCertificate_Badge20250923-32-eo9x7q.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 text-sm font-medium"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4">
+                    <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                  </svg>
+                  View Certificate
+                </a>
+              </div>
+            </div>
+
+            {/* Google Data Analytics Certificate */}
+            <div className="animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-green-500 rounded-lg">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
+                      <path fill="currentColor" d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2-7H3v2h16V4zm0 4H3v2h16V8z"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-green-800">Google Data Analytics</h3>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">
+                  Professional certificate in Data Analytics and statistical analysis
+                </p>
+                <a 
+                  href="/GoogleDataAnalyticsProfessionalCertificate_Badge20250923-32-mk6rzb.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200 text-sm font-medium"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4">
+                    <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                  </svg>
+                  View Certificate
+                </a>
+              </div>
+            </div>
+
+            {/* SQL Advanced Certificate */}
+            <div className="animate-slide-in-left" style={{ animationDelay: '0.3s' }}>
+              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-purple-500 rounded-lg">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
+                      <path fill="currentColor" d="M8 3C6.9 3 6 3.9 6 5v14c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H8zm0 2h8v12H8V5z"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-purple-800">SQL Advanced</h3>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">
+                  Advanced SQL programming and database management skills
+                </p>
+                <a 
+                  href="/sql-advanced.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors duration-200 text-sm font-medium"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4">
+                    <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                  </svg>
+                  View Certificate
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Featured Projects Section - Full Width Below */}
       <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
         <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500">

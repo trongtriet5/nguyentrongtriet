@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-const Layout = ({ children, title = "trongtriet5 - Data Analyst Portfolio", description = "Data Analyst | Business Intelligence specializing in foodtech and operations sectors"}) => {
+const Layout = ({ children, title = "Nguyen Trong Triet - Data Analyst", description = "Data Analyst | BI Developer"}) => {
   return (
     <>
       <Head>

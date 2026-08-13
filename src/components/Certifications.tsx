@@ -23,28 +23,47 @@ export default function Certifications() {
           <div className="lg:col-span-2">
             <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               {certifications.map((cert) => (
-                <li
-                  key={cert.title}
-                  className="flex gap-4 rounded-2xl border border-border bg-surface p-4"
-                >
-                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-border">
-                    <Image
-                      src={cert.image}
-                      alt=""
-                      aria-hidden="true"
-                      fill
-                      sizes="64px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold leading-snug text-ink">
-                      {cert.title}
-                    </p>
-                    <p className="mt-1 text-xs text-ink-muted">
-                      {cert.issuer} · {cert.year}
-                    </p>
-                  </div>
+                <li key={cert.title}>
+                  <a
+                    href={cert.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex gap-4 rounded-2xl border border-border bg-surface p-4 transition-colors hover:border-accent focus-visible:border-accent"
+                  >
+                    <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-border">
+                      <Image
+                        src={cert.image}
+                        alt=""
+                        aria-hidden="true"
+                        fill
+                        sizes="64px"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold leading-snug text-ink">
+                        {cert.title}
+                      </p>
+                      <p className="mt-1 text-xs text-ink-muted">
+                        {cert.issuer} · {cert.year}
+                      </p>
+                      <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-accent transition-colors group-hover:text-accent-hover">
+                        View certificate (PDF)
+                        <svg
+                          aria-hidden="true"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.75"
+                        >
+                          <path d="M6 3.5h6.5V10M12.5 3.5 3.5 12.5" />
+                        </svg>
+                        <span className="sr-only">, opens in a new tab</span>
+                      </span>
+                    </div>
+                  </a>
                 </li>
               ))}
               <li className="flex items-center gap-4 rounded-2xl border border-border bg-surface p-4">

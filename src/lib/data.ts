@@ -170,18 +170,21 @@ export const certifications = [
     issuer: "HackerRank",
     year: "2024",
     image: "/images/certs/sql-hackerrank.jpg",
+    pdf: "/files/certs/SQL-Advanced-HackerRank.pdf",
   },
   {
     title: "Google Data Analytics Professional Certificate",
     issuer: "Coursera",
     year: "2025",
     image: "/images/certs/google-da.jpg",
+    pdf: "/files/certs/Google-Data-Analytics-Professional-Certificate.pdf",
   },
   {
     title: "Google Business Intelligence Professional Certificate",
     issuer: "Coursera",
     year: "2025",
     image: "/images/certs/google-bi.jpg",
+    pdf: "/files/certs/Google-Business-Intelligence-Professional-Certificate.pdf",
   },
 ] as const;
 

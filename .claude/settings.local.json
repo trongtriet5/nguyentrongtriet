@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xxd \"C:\\\\Users\\\\Ginkgo\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Ginkgo-Desktop-new-porfolio\\\\04a6091a-2dc9-4d20-92ae-a04733819fed\\\\scratchpad\\\\cv_fixed.pdf\")"
+    ]
+  }
+}

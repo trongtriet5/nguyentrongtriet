@@ -8,7 +8,7 @@ export const profile = {
   site: "nguyentrongtriet.vercel.app",
   resumeHref: "/files/Nguyen-Trong-Triet-Resume.pdf",
   summary:
-    "Business Intelligence Data Analyst with 2+ years turning retail, HR, and e-commerce data into reporting systems and decisions — from SQL Server stored procedures and Power BI dashboards to demand-driven inventory models.",
+    "Data Analyst with 2+ years across HR, Retail, and Operations — turning recruitment funnels, store performance, and inventory data into reporting systems and decisions, from SQL Server stored procedures and Power BI dashboards to demand-driven inventory models.",
   socials: [
     { label: "Email", href: "mailto:job.nguyentrongtriet@gmail.com" },
     { label: "Phone", href: "tel:+84772086453" },
@@ -45,6 +45,7 @@ export const experience = [
     role: "Retail Data Analyst",
     period: "May 2026 — Present",
     current: true,
+    domains: ["Retail", "Operations"],
     highlights: [
       "Partnered with IT to implement the Retail Pro ERP/POS system — SKU master data creation, pricing configuration, UAT, and end-to-end deployment.",
       "Wrote SQL Server stored procedures for the eBiz platform to automate operational reporting, and configured advanced SLICeR Krunch reports for inventory, sales, and merchandising analytics.",
@@ -59,6 +60,7 @@ export const experience = [
     role: "Data Analyst",
     period: "Dec 2025 — May 2026",
     current: false,
+    domains: ["HR", "Operations"],
     highlights: [
       "Processed and consolidated 3,000+ recruitment records/month, improving data accuracy by 90% and cutting manual reconciliation.",
       "Built a Power BI Recruitment Dashboard tracking funnel performance and TA KPIs, reducing reporting time by 80%.",
@@ -73,6 +75,7 @@ export const experience = [
     role: "Data Analyst",
     period: "Dec 2024 — Dec 2025",
     current: false,
+    domains: ["HR"],
     highlights: [
       "Designed Power BI dashboards tracking employee engagement and restaurant staff satisfaction for the corporate office.",
       "Built KPI tracking dashboards for the Talent Acquisition team to manage recruitment progress and quality.",
@@ -98,13 +101,16 @@ export const projects = [
       { label: "Sales achievement", value: "99.89%", delta: "of target" },
       { label: "AOV", value: "1.34M ₫", delta: "+7.6% YoY" },
     ],
-    image: {
-      full: "/images/projects/retail-full.jpg",
-      thumb: "/images/projects/retail-thumb.jpg",
-      alt: "Ginkgo JSC retail operations Power BI dashboard showing orders, net sales, sales achievement versus target, top-performing areas and stores, product mix, and hourly sales trends.",
-      width: 1600,
-      height: 2483,
-    },
+    images: [
+      {
+        full: "/images/projects/retail-1-full.jpg",
+        thumb: "/images/projects/retail-1-thumb.jpg",
+        alt: "Ginkgo JSC retail operations Power BI dashboard showing orders, net sales, sales achievement versus target, top-performing areas and stores, product mix, and hourly sales trends.",
+        width: 1600,
+        height: 2483,
+        caption: "Full report — sales, targets, product mix, and hourly trends",
+      },
+    ],
   },
   {
     slug: "recruitment-performance",
@@ -121,36 +127,40 @@ export const projects = [
       { label: "Avg. lead time", value: "19.2 days" },
       { label: "Funnel volume", value: "21,091", delta: "applications" },
     ],
-    image: {
-      full: "/images/projects/recruitment-full.jpg",
-      thumb: "/images/projects/recruitment-thumb.jpg",
-      alt: "KFC Vietnam recruitment Power BI dashboard showing offering rate, onboarding rate, average lead time, recruitment funnel from request to onboarding, and pending hiring requests by recruiter and store.",
-      width: 1600,
-      height: 925,
-    },
-  },
-  {
-    slug: "ecommerce-performance",
-    title: "E-Commerce Performance Dashboard",
-    org: "Independent project",
-    tools: ["Power BI", "DAX"],
-    summary:
-      "Cross-channel D2C dashboard unifying sales, returns, and platform costs across Shopee, TikTok, and a owned website.",
-    description:
-      "Independent project modeling a direct-to-consumer oral-care brand's multi-channel performance — revenue versus KPI by product and platform, return/cancellation drivers, and a full cost breakdown across platform fees, ads, and fulfillment.",
-    metrics: [
-      { label: "Net revenue", value: "12.6bn ₫", delta: "65.1% of KPI" },
-      { label: "Orders fulfilled", value: "18,724" },
-      { label: "AOV", value: "672,989 ₫" },
-      { label: "Cancellation rate", value: "20.2%" },
+    images: [
+      {
+        full: "/images/projects/recruitment-1-full.jpg",
+        thumb: "/images/projects/recruitment-1-thumb.jpg",
+        alt: "KFC Vietnam recruitment Power BI dashboard overview showing offering rate, onboarding rate, average lead time, recruitment funnel from request to onboarding, and pending hiring requests by recruiter and store.",
+        width: 1600,
+        height: 925,
+        caption: "Overview — funnel, offering & onboarding rates, pending requests",
+      },
+      {
+        full: "/images/projects/recruitment-2-full.jpg",
+        thumb: "/images/projects/recruitment-2-thumb.jpg",
+        alt: "Recruitment dashboard comparison view showing offering and onboarding rate by operations manager, percent of internal candidates by PIC over time, and total stores by area manager.",
+        width: 1600,
+        height: 925,
+        caption: "By manager — offering/onboarding rate by OM and store coverage by AM",
+      },
+      {
+        full: "/images/projects/recruitment-3-full.jpg",
+        thumb: "/images/projects/recruitment-3-thumb.jpg",
+        alt: "Recruitment dashboard department breakdown showing open, offering, cancelled, and onboarding requests by department, average lead time by manager level, and offering versus onboarding rate by PIC.",
+        width: 1600,
+        height: 925,
+        caption: "By department — request status, lead time, and PIC performance",
+      },
+      {
+        full: "/images/projects/recruitment-4-full.jpg",
+        thumb: "/images/projects/recruitment-4-thumb.jpg",
+        alt: "Recruitment dashboard sourcing view showing year-over-year offering and onboarding rate, average lead time by manager level, candidate approach volume by source, and onboarding share by source.",
+        width: 1600,
+        height: 925,
+        caption: "By source — year-over-year rates and candidate sourcing mix",
+      },
     ],
-    image: {
-      full: "/images/projects/ecommerce-full.jpg",
-      thumb: "/images/projects/ecommerce-thumb.jpg",
-      alt: "E-commerce Power BI dashboard showing fulfilled orders, expected and net revenue versus KPI, AOV, revenue by platform, cost breakdown, and revenue by product over time.",
-      width: 1600,
-      height: 917,
-    },
   },
 ] as const;
 

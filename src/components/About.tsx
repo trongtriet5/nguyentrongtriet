@@ -20,7 +20,7 @@ export default function About() {
             actually use.
           </p>
           <p className="mt-4 text-base leading-relaxed text-ink-muted">
-            Two years across retail, HR, and e-commerce taught me the same
+            Two years across Retail, HR, and E-Commerce taught me the same
             lesson from different angles: a dashboard only matters if it
             changes a decision. I work end-to-end — from SQL Server stored
             procedures and data pipelines to the Power BI reports that

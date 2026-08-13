@@ -8,6 +8,7 @@ type Project = (typeof projects)[number];
 
 export default function Projects() {
   const [active, setActive] = useState<Project | null>(null);
+  const [imageIndex, setImageIndex] = useState(0);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
 
@@ -23,6 +24,7 @@ export default function Projects() {
 
   function openProject(project: Project, trigger: HTMLElement) {
     triggerRef.current = trigger;
+    setImageIndex(0);
     setActive(project);
   }
 
@@ -30,6 +32,20 @@ export default function Projects() {
     setActive(null);
     triggerRef.current?.focus();
   }
+
+  function showImage(delta: number) {
+    if (!active) return;
+    const count = active.images.length;
+    setImageIndex((i) => (i + delta + count) % count);
+  }
+
+  function onDialogKeyDown(event: React.KeyboardEvent<HTMLDialogElement>) {
+    if (!active || active.images.length < 2) return;
+    if (event.key === "ArrowRight") showImage(1);
+    if (event.key === "ArrowLeft") showImage(-1);
+  }
+
+  const currentImage = active?.images[imageIndex];
 
   return (
     <section
@@ -48,7 +64,7 @@ export default function Projects() {
           Dashboards built to answer specific business questions
         </p>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="mx-auto mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:max-w-3xl lg:max-w-none">
           {projects.map((project) => (
             <article
               key={project.slug}
@@ -61,15 +77,17 @@ export default function Projects() {
                 aria-haspopup="dialog"
               >
                 <Image
-                  src={project.image.thumb}
-                  alt={project.image.alt}
+                  src={project.images[0].thumb}
+                  alt={project.images[0].alt}
                   fill
                   sizes="(min-width: 1024px) 33vw, 100vw"
                   className="object-cover object-top transition-transform duration-200 group-hover:scale-[1.03]"
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
                 <span className="absolute bottom-3 right-3 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold text-ink opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                  View dashboard
+                  {project.images.length > 1
+                    ? `View dashboard (${project.images.length} pages)`
+                    : "View dashboard"}
                 </span>
               </button>
 
@@ -139,12 +157,13 @@ export default function Projects() {
         onClick={(event) => {
           if (event.target === dialogRef.current) closeProject();
         }}
+        onKeyDown={onDialogKeyDown}
         aria-labelledby={active ? "project-dialog-title" : undefined}
-        className="w-full max-w-4xl overflow-hidden rounded-2xl border border-border bg-surface p-0 text-ink backdrop:bg-black/80 open:animate-none"
+        className="m-auto flex max-h-[85vh] w-[calc(100vw-2rem)] max-w-4xl flex-col overflow-hidden rounded-2xl border border-border bg-surface p-0 text-ink backdrop:bg-black/80 open:animate-none"
       >
-        {active && (
-          <div>
-            <div className="flex items-start justify-between gap-4 border-b border-border p-5">
+        {active && currentImage && (
+          <div className="flex min-h-0 flex-1 flex-col">
+            <div className="flex shrink-0 items-start justify-between gap-4 border-b border-border p-5">
               <div>
                 <p className="font-mono text-xs uppercase tracking-wider text-accent">
                   {active.org}
@@ -177,20 +196,70 @@ export default function Projects() {
               </button>
             </div>
 
-            <div className="max-h-[70vh] overflow-y-auto">
-              <Image
-                src={active.image.full}
-                alt={active.image.alt}
-                width={active.image.width}
-                height={active.image.height}
-                sizes="(min-width: 1024px) 900px, 100vw"
-                className="h-auto w-full"
-              />
-            </div>
+            <div className="min-h-0 flex-1 overflow-y-auto">
+              <div className="relative">
+                <Image
+                  key={currentImage.full}
+                  src={currentImage.full}
+                  alt={currentImage.alt}
+                  width={currentImage.width}
+                  height={currentImage.height}
+                  sizes="(min-width: 1024px) 900px, 100vw"
+                  className="h-auto w-full"
+                />
 
-            <p className="border-t border-border p-5 text-sm leading-relaxed text-ink-muted">
-              {active.description}
-            </p>
+                {active.images.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => showImage(-1)}
+                      className="absolute left-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface/90 text-ink transition-colors hover:border-accent hover:text-accent"
+                      aria-label="Previous dashboard page"
+                    >
+                      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.75">
+                        <path d="M9.5 3.5 5 8l4.5 4.5" />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => showImage(1)}
+                      className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface/90 text-ink transition-colors hover:border-accent hover:text-accent"
+                      aria-label="Next dashboard page"
+                    >
+                      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.75">
+                        <path d="M6.5 3.5 11 8l-4.5 4.5" />
+                      </svg>
+                    </button>
+                  </>
+                )}
+              </div>
+
+              {active.images.length > 1 && (
+                <div className="flex items-center justify-center gap-2 border-t border-border py-3">
+                  {active.images.map((img, i) => (
+                    <button
+                      key={img.full}
+                      type="button"
+                      onClick={() => setImageIndex(i)}
+                      aria-label={`Go to dashboard page ${i + 1} of ${active.images.length}`}
+                      aria-current={i === imageIndex}
+                      className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                        i === imageIndex ? "bg-accent" : "bg-border hover:bg-ink-muted"
+                      }`}
+                    />
+                  ))}
+                </div>
+              )}
+
+              <p className="border-t border-border p-5 text-sm leading-relaxed text-ink-muted">
+                {active.images.length > 1 && (
+                  <span className="mb-2 block font-mono text-xs uppercase tracking-wider text-accent">
+                    Page {imageIndex + 1} of {active.images.length} — {currentImage.caption}
+                  </span>
+                )}
+                {active.description}
+              </p>
+            </div>
           </div>
         )}
       </dialog>

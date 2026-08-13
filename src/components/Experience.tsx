@@ -41,6 +41,16 @@ export default function Experience() {
                   )}
                 </p>
               </div>
+              <ul className="mt-3 flex flex-wrap gap-2" aria-label="Domains">
+                {job.domains.map((domain) => (
+                  <li
+                    key={domain}
+                    className="rounded-full border border-border px-2.5 py-1 font-mono text-xs text-ink-muted"
+                  >
+                    {domain}
+                  </li>
+                ))}
+              </ul>
               <ul className="mt-4 space-y-2">
                 {job.highlights.map((line) => (
                   <li
